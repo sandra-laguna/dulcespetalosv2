@@ -1,0 +1,6 @@
+.main-header {
+    display: flex;
+    padding: var(--padding-s) var(--padding-m);
+    background-color: var(--color-secondary);
+    border-bottom: var(--border-secondary);
+}

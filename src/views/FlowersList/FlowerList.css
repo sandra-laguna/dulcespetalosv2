@@ -1,0 +1,48 @@
+.flowers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18rem,1fr));
+    gap: var(--m); 
+    padding: var(--padding-m) var(--padding-l);
+}
+
+.flower-card{
+    border-radius: var(--border-radius-md);
+    box-shadow: var(--primary-box-shadow);
+    transition: all 0.3s ease;
+}
+
+.flower-card:hover{
+    transform: scale(1.05);
+}
+
+.flower-info-img {
+    width: var(--width-full); 
+    height: var(--height-l);
+    border-top-left-radius: var(--border-radius-md);
+    border-top-right-radius: var(--border-radius-md);
+    object-fit: cover;
+}
+
+.flower-info {
+    line-height: var(--m);
+    padding: var(--padding-s);
+}
+
+.flower-info-name{
+    font-size: 1.4rem;
+}
+
+.flower-info-binomialName {
+    font-style: italic;
+}
+
+/* Tablet */
+@media (min-width: 640px) {  }
+
+
+/* Laptop */
+@media (min-width: 1024px) {  }
+
+
+/* Desktop */
+@media (min-width: 1280px) {  }

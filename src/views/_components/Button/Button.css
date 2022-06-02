@@ -1,0 +1,30 @@
+.button{
+    display: inline-block;
+    padding: var(--padding-xs) var(--padding-xs);
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: var(--border-radius-s);
+    cursor: pointer;
+}
+
+.button::first-letter{
+    text-transform: capitalize;
+}
+
+.primary {
+    color: var(--color-primary-contrast);
+    background: var(--color-primary);
+}
+  
+.primary:hover{
+    background: var(--color-primary-shade);
+}
+
+.secondary {
+    color: var(--black);
+    background: var(--secondary-gray);
+}
+  
+.secondary:hover{
+    background: var(--dark-gray);
+}

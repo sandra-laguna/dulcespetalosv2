@@ -1,0 +1,61 @@
+:root {
+  --bg-main-color: #f7f7f7;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: #f47e5f;
+	--color-primary-contrast: var(--color-white);
+	--color-primary-shade: #d76f54;
+  --color-secondary: #f3f3f3;
+	--color-secondary-contrast: var(--color-black);
+	--color-secondary-shade: #d3d3d3;
+  --color-secondary-tint: #ececec;
+  --border-primary: 1px solid var(--color-primary);
+  --border-secondary: 1px solid var(--color-secondary-shade);
+  --primary-box-shadow: 0 2px 5px 0 rgb(0 0 0 / 20%);
+  --xxs: 0.2rem;
+  --xs: 0.75rem; /* Tamaño relacionado con el font-size del body */
+  --s: 1rem;
+  --m: 2rem;
+  --l: 5rem;
+  --xl: 7rem;
+  --padding-xxs: 0.2rem;
+  --padding-xs: 0.75rem;
+  --padding-s: 1rem;
+  --padding-m: 2rem;
+  --padding-l: 5rem;
+  --padding-xl: 7rem;
+  --margin-xxs: 0.2rem;
+  --margin-xs: 0.75rem;
+  --margin-s: 1rem;
+  --margin-m: 2rem;
+  --margin-l: 5rem;
+  --margin-xl: 7rem;
+  --border-radius-s: 0.25rem;
+  --border-radius-md: 0.50rem;
+  --width-xs: 2rem;
+  --width-s: 4rem;
+  --width-m: 8rem;
+  --width-l: 16rem;
+  --width-xl: 18rem;
+  --width-full: 100%;
+  --height-xs: 2rem;
+  --height-s: 4rem;
+  --height-m: 8rem;
+  --height-l: 16rem;
+  --height-xl: 18rem;
+  --height-full: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

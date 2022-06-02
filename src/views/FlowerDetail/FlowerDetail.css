@@ -1,0 +1,69 @@
+.flower-detail-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: var(--margin-s) var(--margin-m);
+}
+
+.flower-detail-title{
+    width: var(--width-full);
+    padding: var(--padding-xs);
+    border-bottom: var(--border-primary);
+    color: var(--color-primary);
+    font-size: var(--m);
+    text-align: center;
+}
+
+.flower-detail-card{
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--width-xl);
+    gap: var(--s);
+    margin: var(--margin-m) 0;
+    padding: var(--padding-m);
+    border-radius: var(--border-radius-md);
+    background-color: var(--color-secondary-tint);
+    box-shadow: var(--primary-box-shadow);
+}
+
+.flower-detail-card-img {
+    width: var(--width-full);
+    height: var(--height-l);
+    border-radius: var(--border-radius-md);
+    object-fit: cover;
+}
+
+.flower-detail-card-info {
+    width: var(--width-full);
+}
+
+.flower-detail-card-property{
+    display: flex;
+    align-items: center;
+    gap: var(--xxs);
+    padding: var(--padding-xxs) 0;
+    font-weight: bold;
+}
+
+.flower-detail-card-specification{
+    font-weight: normal;
+}
+
+.flower-detail-card-specification::first-letter{
+    text-transform: capitalize;
+}
+
+.waterdrop-icon {
+    height: var( --margin-xs);
+    margin: var(--margin-xxs);
+}
+
+/* Tablet */
+@media (min-width: 640px) { }
+
+/* Laptop */
+@media (min-width: 1024px) { }
+
+
+/* Desktop */
+@media (min-width: 1280px) {  }
