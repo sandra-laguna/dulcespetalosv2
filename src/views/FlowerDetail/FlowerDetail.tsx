@@ -58,7 +58,8 @@ export const FlowerDetail = () => {
           />
 
           <NavLink to="/">
-            <Button text="Return" type="primary" />
+            {/* <Button text="Return" type="primary" /> */}
+            <Button model="primary">Return</Button>
           </NavLink>
 
           <div className="flower-detail-card-info">

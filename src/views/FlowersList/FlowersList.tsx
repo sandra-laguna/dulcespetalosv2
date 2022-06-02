@@ -61,7 +61,8 @@ export const FlowersList = () => {
               <h2 className="flower-info-name">{flower.name}</h2>
               <p className="flower-info-binomialName">{flower.binomialName}</p>
               <NavLink to={`/flower/${flower.id}`}>
-                <Button text="see more" type="primary" />
+                {/* <Button text="see more" type="primary" /> */}
+                <Button model="primary">See more</Button>
               </NavLink>
             </div>
           </div>
