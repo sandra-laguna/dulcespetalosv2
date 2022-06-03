@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
-import { NavLink } from 'react-router-dom';
 
 import { Spinner } from '../_components/Spinner/Spinner';
-import { Button } from '../_components/Button/Button';
 
 import { Flower } from '../../entities/Flower';
 
-import './FlowerList.css';
+import { StyledMainContainer } from '../_components/MainContainer/MainContainer';
+import { GridContainer } from '../_components/GridContainer/GridContainer';
+import { Card } from '../_components/Card/Card';
 
 export const FlowersList = () => {
   //const {flowers, error } = useFlowersList(); <-- Para crear custom Hook
@@ -48,26 +48,18 @@ export const FlowersList = () => {
     );
 
   return (
-    <div className="main-container">
-      <div className="flowers-container">
+    <StyledMainContainer>
+      <GridContainer>
         {flowers.map((flower) => (
-          <div key={flower.id} className="flower-card">
-            <img
-              src={flower.imgUrl}
-              alt={flower.name}
-              className="flower-info-img"
-            />
-            <div className="flower-info">
-              <h2 className="flower-info-name">{flower.name}</h2>
-              <p className="flower-info-binomialName">{flower.binomialName}</p>
-              <NavLink to={`/flower/${flower.id}`}>
-                {/* <Button text="see more" type="primary" /> */}
-                <Button model="primary">See more</Button>
-              </NavLink>
-            </div>
-          </div>
+          <Card
+            key={flower.id}
+            cardType="primary"
+            flower={flower}
+            btnText="see more"
+            btnUrl={`/flower/${flower.id}`}
+          />
         ))}
-      </div>
-    </div>
+      </GridContainer>
+    </StyledMainContainer>
   );
 };

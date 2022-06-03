@@ -1,13 +1,17 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
 import { Spinner } from '../_components/Spinner/Spinner';
-import { Button } from '../_components/Button/Button';
+
+import { StyledMainContainer } from '../_components/MainContainer/MainContainer';
+import { StyledFlexContainer } from '../_components/FlexContainer/FlexContainer';
+import { Title } from '../_components/Title/Title';
+import { Card } from '../_components/Card/Card';
 
 import { Flower } from '../../entities/Flower';
 
-import waterdropIcon from '../_assets/images/waterdrop.png';
+/* import waterdropIcon from '../_assets/images/waterdrop.png';
 
-import './FlowerDetail.css';
+import './FlowerDetail.css'; */
 
 export const FlowerDetail = () => {
   const { id } = useParams();
@@ -41,84 +45,22 @@ export const FlowerDetail = () => {
       </div>
     );
 
-  const wateringsFlower = (flower: Flower): number[] => {
+  /*   const wateringsFlower = (flower: Flower): number[] => {
     return Array.from(Array(flower.wateringsPerWeek).keys());
     //Retorna array con la longitud de "wateringsPerWeek" de cada flor
-  };
+  }; */
 
   return (
-    <div className="main-container">
-      <article className="flower-detail-container">
-        <h2 className="flower-detail-title">Flower Detail</h2>
-        <div className="flower-detail-card">
-          <img
-            src={flower.imgUrl}
-            alt={flower.name}
-            className="flower-detail-card-img"
-          />
-
-          <NavLink to="/">
-            {/* <Button text="Return" type="primary" /> */}
-            <Button model="primary">Return</Button>
-          </NavLink>
-
-          <div className="flower-detail-card-info">
-            {/* <div>
-            {Object.entries(flower).map((item) => (
-              <p>{item}</p>
-            ))}
-          </div> */}
-
-            <p className="flower-detail-card-property">
-              Name:{' '}
-              <span className="flower-detail-card-specification">
-                {flower.name}
-              </span>
-            </p>
-            <p className="flower-detail-card-property">
-              Binomial name:{' '}
-              <span className="flower-detail-card-specification">
-                {flower.binomialName}
-              </span>
-            </p>
-            <p className="flower-detail-card-property">
-              Price:{' '}
-              <span className="flower-detail-card-specification">
-                {flower.price}$
-              </span>
-            </p>
-
-            <p className="flower-detail-card-property">
-              Waterings per week:
-              {wateringsFlower(flower).map(
-                (
-                  item,
-                  index //Importante la key
-                ) => (
-                  <img
-                    src={waterdropIcon}
-                    alt={`${item}`}
-                    className="waterdrop-icon"
-                    key={`waterdrop_${index}`}
-                  />
-                )
-              )}
-            </p>
-            <p className="flower-detail-card-property">
-              Fertilizer type:{' '}
-              <span className="flower-detail-card-specification">
-                {flower.fertilizerType}
-              </span>
-            </p>
-            <p className="flower-detail-card-property">
-              Height:{' '}
-              <span className="flower-detail-card-specification">
-                {flower.heightInCm}cm
-              </span>
-            </p>
-          </div>
-        </div>
-      </article>
-    </div>
+    <StyledMainContainer>
+      <StyledFlexContainer>
+        <Title text="Flower detail" />
+        <Card
+          cardType="secondary"
+          flower={flower}
+          btnText="return"
+          btnUrl={`/`}
+        />
+      </StyledFlexContainer>
+    </StyledMainContainer>
   );
 };
