@@ -1,11 +1,11 @@
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-import { Flower } from '../../../entities/Flower';
+import { Flower } from '../../../../entities/Flower';
 
-import { Button } from '../Button/Button';
+import { Button } from '../../atoms/Button/Button';
 
-import waterdropIcon from '../../_assets/images/waterdrop.png';
+import waterdropIcon from '../../../_assets/images/waterdrop.png';
 
 interface Props {
   cardType: 'primary' | 'secondary';
@@ -91,7 +91,7 @@ const wateringsFlower = (flower: Flower): number[] => {
 
 export const Card: React.FC<Props> = ({
   cardType,
-  flower,
+  flower: flower,
   btnText,
   btnUrl,
 }) => (

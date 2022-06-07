@@ -1,13 +1,13 @@
 import { useEffect, useState } from 'react';
 import { NavLink, useParams } from 'react-router-dom';
-import { Spinner } from '../_components/Spinner/Spinner';
+import { Spinner } from '../../_components/atoms/Spinner/Spinner';
 
-import { StyledMainContainer } from '../_components/MainContainer/MainContainer';
-import { StyledFlexContainer } from '../_components/FlexContainer/FlexContainer';
-import { Title } from '../_components/Title/Title';
-import { Card } from '../_components/Card/Card';
+import { StyledMainContainer } from '../../_components/objects/MainContainer/MainContainer';
+import { StyledFlexContainer } from '../../_components/objects/FlexContainer/FlexContainer';
+import { Title } from '../../_components/atoms/Title/Title';
+import { Card } from '../../_components/molecules/Card/Card';
 
-import { Flower } from '../../entities/Flower';
+import { Flower } from '../../../entities/Flower';
 
 /* import waterdropIcon from '../_assets/images/waterdrop.png';
 

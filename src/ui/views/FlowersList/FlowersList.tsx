@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react';
 
-import { Spinner } from '../_components/Spinner/Spinner';
+import { Spinner } from '../../_components/atoms/Spinner/Spinner';
 
-import { Flower } from '../../entities/Flower';
+import { Flower } from '../../../entities/Flower';
 
-import { StyledMainContainer } from '../_components/MainContainer/MainContainer';
-import { GridContainer } from '../_components/GridContainer/GridContainer';
-import { Card } from '../_components/Card/Card';
+import { StyledMainContainer } from '../../_components/objects/MainContainer/MainContainer';
+import { GridContainer } from '../../_components/objects/GridContainer/GridContainer';
+import { Card } from '../../_components/molecules/Card/Card';
 
 export const FlowersList = () => {
   //const {flowers, error } = useFlowersList(); <-- Para crear custom Hook

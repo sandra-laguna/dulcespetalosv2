@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import logo from '../../_assets/images/logo.svg';
+import logo from '../../../_assets/images/logo.svg';
 
 /* import './Header.css'; */
 

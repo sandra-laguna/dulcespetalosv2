@@ -1,4 +1,4 @@
-import flower from '../../_assets/images/flower.svg';
+import flower from '../../../_assets/images/flower.svg';
 
 import './Spinner.css';
 
