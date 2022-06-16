@@ -1,46 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useFetch } from '../../../useFetch';
 
 import { Spinner } from '../../_components/atoms/Spinner/Spinner';
-
-import { Flower } from '../../../entities/Flower';
 
 import { StyledMainContainer } from '../../_components/objects/MainContainer/MainContainer';
 import { GridContainer } from '../../_components/objects/GridContainer/GridContainer';
 import { Card } from '../../_components/molecules/Card/Card';
 
+import { Flower } from '../../../entities/Flower';
+
 export const FlowersList = () => {
-  //const {flowers, error } = useFlowersList(); <-- Para crear custom Hook
-  const [flowers, setFlowers] = useState<Flower[] | undefined>(undefined);
-  const [error, setError] = useState<boolean>(false);
+  const { data, isLoading, isError } = useFetch<Flower[]>(
+    'https://dulces-petalos.herokuapp.com/api/product'
+  );
 
-  useEffect(() => {
-    fetchAllFlowers();
-  }, []); //El array indica cuando se va a volver a ejecutar el useEffect (Array de dependencias), en este caso solo cuando cargue el componente por primera vez
-
-  const fetchAllFlowers = async () => {
-    /*     fetch('https://dulces-petalos.herokuapp.com/api/product')
-      .then( response => response.json )
-      .then(data => 
-        setFlowers(data)
-      )
-      .catch(error=>console.log('error', error))
-      .finally(()=>setIsLoading(false)) */
-
-    try {
-      const response = await fetch(
-        'https://dulces-petalos.herokuapp.com/api/product'
-      );
-      const data = await response.json();
-      setFlowers(data);
-    } catch (e) {
-      setError(true);
-    }
-  };
-
-  if (error)
+  if (isError)
     return <div className="element-center-page">Ha ocurrido un error</div>;
 
-  if (!flowers)
+  if (isLoading)
     return (
       <div className="element-center-page">
         <Spinner />
@@ -50,7 +26,7 @@ export const FlowersList = () => {
   return (
     <StyledMainContainer>
       <GridContainer>
-        {flowers.map((flower) => (
+        {data?.map((flower: Flower) => (
           <Card
             key={flower.id}
             cardType="primary"

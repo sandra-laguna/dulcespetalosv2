@@ -9,7 +9,7 @@ import waterdropIcon from '../../../_assets/images/waterdrop.png';
 
 interface Props {
   cardType: 'primary' | 'secondary';
-  flower: Flower;
+  flower: Flower | undefined;
   btnText: string;
   btnUrl: string;
 }
@@ -96,48 +96,49 @@ export const Card: React.FC<Props> = ({
   btnUrl,
 }) => (
   <StyledCard cardType={cardType}>
-    <CardImg src={flower.imgUrl} alt={flower.name} cardType={cardType} />
+    <CardImg src={flower?.imgUrl} alt={flower?.name} cardType={cardType} />
     <CardInfo cardType={cardType}>
-      <CardTitle>{cardType === 'primary' ? flower.name : ''}</CardTitle>
+      <CardTitle>{cardType === 'primary' ? flower?.name : ''}</CardTitle>
       <CardSubTitle>
-        {cardType === 'primary' ? flower.binomialName : ''}
+        {cardType === 'primary' ? flower?.binomialName : ''}
       </CardSubTitle>
       {cardType === 'secondary' && (
         <CardInfo cardType={cardType}>
           <p>
             <strong>Name: </strong>
-            {flower.name}
+            {flower?.name}
           </p>
           <p>
             <strong>Binomial name: </strong>
-            {flower.binomialName}
+            {flower?.binomialName}
           </p>
           <p>
             <strong>Price: </strong>
-            {flower.price + '$'}
+            {flower?.price + '$'}
           </p>
           <p>
             <strong>Waterings per week: </strong>
-            {wateringsFlower(flower).map(
-              (
-                item,
-                index //Importante la key
-              ) => (
-                <CardIcon
-                  src={waterdropIcon}
-                  alt={`${item}`}
-                  key={`waterdrop_${index}`}
-                />
-              )
-            )}
+            {flower &&
+              wateringsFlower(flower).map(
+                (
+                  item,
+                  index //Importante la key
+                ) => (
+                  <CardIcon
+                    src={waterdropIcon}
+                    alt={`${item}`}
+                    key={`waterdrop_${index}`}
+                  />
+                )
+              )}
           </p>
           <p>
             <strong>Fertilizer type: </strong>
-            {flower.fertilizerType}
+            {flower?.fertilizerType}
           </p>
           <p>
             <strong>Height: </strong>
-            {flower.heightInCm + 'cm'}
+            {flower?.heightInCm + 'cm'}
           </p>
         </CardInfo>
       )}
